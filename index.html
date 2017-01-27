@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>Random Quote Generator</title>
+		
+		<link rel="stylesheet" type="text/css" href="css/default.css" />
+		<link rel="stylesheet" type="text/css" href="css/bookblock.css" />
+		<!-- custom demo style -->
+		<link rel="stylesheet" type="text/css" href="css/demo1.css" />
+		<link rel="stylesheet" type="text/css" href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'/>
+ 		<script src="js/modernizr.custom.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<!-- Top Navigation -->
+		
+			<header>
+				<h1>Freecodecamp<span>Intermediate Front End Development Projects</span></h1>	
+			
+			</header>
+			<div class="main clearfix">
+				<div class="bb-custom-wrapper">
+					<h3>Free Quote Generator by <a href="http://dribbble.com/kevinhowdeshell">Andres Alagna</a></h3>
+					<div id="bb-bookblock" class="bb-bookblock">
+						<div class="bb-item">
+						<a href="http://drbl.in/cLHx"><img src="images/demo1/1.jpg" alt="image03" class='apertura'/></a>
+						</div>
+					</div>
+					<nav>
+					<a id="bb-nav-next" class='btn btn-primary' href='#'> Get a new Quote</a> 
+					<!-- 	<a id="bb-nav-next" href="#" class="bb-custom-icon bb-custom-icon-arrow-right">Next</a> -->
+					</nav>
+				</div>
+			</div>
+		</div><!-- /container -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="js/jquerypp.custom.js"></script>
+		<script src="js/jquery.bookblock.js"></script>
+		<script>
+
+
+
+
+function broma (){
+  $.ajax({
+        url: 'http://api.icndb.com/jokes/random?firstName=Chuck&amp;lastName=Doe',
+   
+
+        success:function(response){
+        
+
+        console.log(response)
+        var respuesta = response;
+
+
+        var eElement = document.getElementById('')
+
+        var contenedor = document.getElementById('bb-bookblock');
+        var bb = document.createElement('div');
+        bb.className = 'bb-item';
+        bb.style.display = 'block';
+        
+        var bromas = document.createElement('h3');
+        bromas.innerHTML = respuesta.value.joke;
+        // bbItem[1].appendChild(bromas);
+        bb.appendChild(bromas);
+        contenedor.appendChild(bb);
+
+
+        }
+        
+
+    });
+
+}
+
+
+
+
+			var Page = (function() {
+				
+				var config = {
+						$bookBlock : $( '#bb-bookblock' ),
+						$navNext : $( '#bb-nav-next' ),
+						$navPrev : $( '#bb-nav-prev' ),
+						$navFirst : $( '#bb-nav-first' ),
+						$navLast : $( '#bb-nav-last' )
+					},
+					init = function() {
+						config.$bookBlock.bookblock( {
+							speed : 800,
+							shadowSides : 0.8,
+							shadowFlip : 0.7
+						} );
+						initEvents();
+					},
+					initEvents = function() {
+						
+						var $slides = config.$bookBlock.children();
+
+						// add navigation events
+						config.$navNext.on( 'click touchstart', function() {
+							var apertura = document.getElementsByClassName('apertura');
+        apertura[0].style.display = 'none';
+						broma()
+							config.$bookBlock.bookblock( 'next' );
+
+							return false;
+						} );
+
+						config.$navPrev.on( 'click touchstart', function() {
+							config.$bookBlock.bookblock( 'prev' );
+							return false;
+						} );
+
+						config.$navFirst.on( 'click touchstart', function() {
+							config.$bookBlock.bookblock( 'first' );
+							return false;
+						} );
+
+						config.$navLast.on( 'click touchstart', function() {
+							config.$bookBlock.bookblock( 'last' );
+							return false;
+						} );
+						
+						// add swipe events
+						$slides.on( {
+							'swipeleft' : function( event ) {
+								config.$bookBlock.bookblock( 'next' );
+								return false;
+							},
+							'swiperight' : function( event ) {
+								config.$bookBlock.bookblock( 'prev' );
+								return false;
+							}
+						} );
+
+						// add keyboard events
+						$( document ).keydown( function(e) {
+							var keyCode = e.keyCode || e.which,
+								arrow = {
+									left : 37,
+									up : 38,
+									right : 39,
+									down : 40
+								};
+
+							switch (keyCode) {
+								case arrow.left:
+									config.$bookBlock.bookblock( 'prev' );
+									break;
+								case arrow.right:
+									config.$bookBlock.bookblock( 'next' );
+									break;
+							}
+						} );
+					};
+
+					return { init : init };
+
+			})();
+		</script>
+		<script>
+				Page.init();
+		</script>
+	</body>
+</html>

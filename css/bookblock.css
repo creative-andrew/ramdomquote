@@ -1,5 +1,9 @@
+.apertura {
+	height: 300px !important; 
+}
+
 .bb-bookblock {
-	width: 400px;
+	max-width: 400px;
 	height: 300px;
 	margin: 0 auto;
 	position: relative;

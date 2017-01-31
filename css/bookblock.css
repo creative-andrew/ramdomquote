@@ -1,3 +1,10 @@
+.bb-item h3 {
+	padding: 20px;
+	padding-top: 3em;
+}
+
+
+
 .apertura {
 	height: 300px !important; 
 }
@@ -165,14 +172,29 @@
 }
 
 .bb-item {
+    
+    background-image: url(https://s-media-cache-ak0.pinimg.com/736x/13/f4/09/13f4093020fc96ba87eae8221d071af7.jpg);
+    background-size: 75px;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-position-y: 210px;
+    background-position-x: 245px;
 	width: 100%;
 	height: 100%;
 	position: absolute;
 	top: 0;
 	left: 0;
 	display: none;
-	background: #fff;
+	background-color: #fff;
 }
+
+
+@media only screen and (min-width : 320px) and (max-width : 600px) {
+.bb-item {
+background-image: none;
+	}
+}
+
 
 /* No JS */
 .no-js .bb-bookblock, 
@@ -184,4 +206,7 @@
 .no-js .bb-item {
 	display: block;
 	position: relative;
+}
+.bb-custom-wrapper .bb-bookblock {
+    box-shadow: 13px 13px 6px 0px rgba(81,64,49,0.6) !important;
 }

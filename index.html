@@ -13,13 +13,13 @@
  		<script src="js/modernizr.custom.js"></script>
 	</head>
 	<body>
+		
 		<div class="container">
 			<!-- Top Navigation -->
 		
 			<header>
 				<h1>Freecodecamp<span>Intermediate Front End Development Projects</span></h1>	
-			
-			</header>
+		
 
 <div class="col-xs-12 col-md-4"></div>
 <div class="col-xs-12 col-md-4">
@@ -28,8 +28,9 @@
 					<h3>Free Quote Generator by <a href="http://dribbble.com/kevinhowdeshell">Andres Alagna</a></h3>
 					<div id="bb-bookblock" class="bb-bookblock">
 						<div class="bb-item">
-						<a href="http://drbl.in/cLHx"><img src="images/demo1/1.jpg" alt="image03" class='apertura img-responsive'/></a>
+						<a href="http://drbl.in/cLHx"><img src="http://www.elsbastards.cat/files/2015/09/Norris04.jpg" alt="image03" class='apertura img-responsive'/></a>
 						</div>
+	
 					</div>
 					<nav>
 					<a id="bb-nav-next" class='btn btn-primary' href='#'> Get a new Quote</a> 
@@ -60,6 +61,7 @@ function broma (){
         
 
         console.log(response)
+
         var respuesta = response;
 
 
@@ -74,9 +76,23 @@ function broma (){
         bromas.innerHTML = respuesta.value.joke;
         // bbItem[1].appendChild(bromas);
         bb.appendChild(bromas);
-        contenedor.appendChild(bb);
+        var tlink = document.createElement('div');
+		tlink.id = 'container';
+		bb.appendChild(tlink);
+		
+		
+		contenedor.appendChild(bb);
+		
 
+		twttr.widgets.createShareButton(
+  '/',
+  document.getElementById('container'),
+  {
+    text: bromas.innerHTML
+  }
+);
 
+document.getElementById('container').id = 'nogood'
         }
         
 
@@ -173,5 +189,24 @@ function broma (){
 		<script>
 				Page.init();
 		</script>
+
+
+
+		<script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));</script>
 	</body>
 </html>

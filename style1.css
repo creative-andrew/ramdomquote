@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Slab:400,700');
+#Body * {
+font-family: 'Josefin Slab', sans-serif !important;
+}
+body, html {
+margin:0;
+padding:0;
+}
+p {
+line-height: 2em;
+}
+.wrapper {
+border: 4px solid #101038;
+margin: 10px;
+background-image: url(https://github.com/geist-ahnen/gearhost/blob/master/public/images/grey.png?raw=true);
+font-family: 'Josefin Slab', sans-serif;
+text-align: center;
+}
+.wrapper img {
+width: 100%;
+height:auto;
+}
+#general-information {
+padding: 20px;
+}
+#general-information img {
+height: 100px;
+width:100px;
+border: 4px solid #101038;
+border-radius: 50%;
+padding: 10px;
+margin-top: 25px;
+margin-bottom: 10px;
+}
+#general-information div {
+display: inline-table;
+width: 29%;
+text-align: center;
+}
+#main-information div {
+text-align: center;
+display: -webkit-inline-box;
+}
+#general-information > div:nth-child(2) {
+padding-left: 3em;
+}
+#general-information > div:nth-child(3) {
+padding-left: 3em;
+}
+h1 {
+font-size: 3em;
+margin: 10px;
+}
+h1, h2,h3,p{
+color: black;
+text-align: center;
+font-family: 'Josefin Slab', sans-serif !important;
+}
+ul,li{
+color: black;
+font-family: 'Josefin Slab', sans-serif !important;
+}
+h2 {
+margin-top: 25px;
+margin-bottom: 10px;
+}
+section {
+text-align: center;
+}
+footer {
+height: 90px;
+width:100%;
+background-color: #101038;
+}
+.footertext {
+color: white !important;
+padding: 20px;
+}
+/************************************************************************************
+MEDIA QUERIES
+*************************************************************************************/
+/* for 980px or less */
+@media screen and (max-width: 980px) {
+#general-information div {
+width: 25%;
+}
+#general-information {
+padding: 30px;
+}
+}
+/* for 700px or less */
+@media screen and (max-width: 600px) {
+#general-information div {
+width: 100%;
+}
+#general-information > div:nth-child(2) {
+padding-left: 0;
+}
+#general-information > div:nth-child(3) {
+padding-left: 0;
+}
+#main-information h2, #main-information ul {
+padding-right: 0;
+padding-left: 0;
+}
+}
+/* for 480px or less */
+@media screen and (max-width: 480px) {
+#general-information div {
+width: 100%;
+}
+#general-information > div:nth-child(2) {
+padding-left: 0;
+}
+#general-information > div:nth-child(3) {
+padding-left: 0;
+}
+#main-information h2, #main-information ul {
+padding-right: 0 !important;
+padding-left: 0 !important;
+}
+}
+/* TABLE */
+table {
+border-collapse:collapse;
+border-bottom: 1px solid #12b908;
+margin: 0 auto;
+}
+table td{
+border-bottom: 1.5px solid green;
+padding: 1em;
+text-align: left !important;
+line-height: 1.4em;
+vertical-align: unset;
+}
+#general-information > div> p {
+padding-right: 1.3em;
+}
+#general-information > div > h3 {
+margin-top: 18.3px;
+margin-bottom: 18.3px;
+}
+.banner{
+text-align: left !important;
+box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+background-color: white;
+padding: 20px;
+border-left: 3px solid #101038;
+margin-bottom: 20px;
+margin-left: 20px;
+margin-right: 20px;
+display: inline-block;
+}
+.banner p {
+color: black;
+display: inline-block;
+margin:0;
+margin-left: 39px;
+}
+.banner img {
+position: absolute;
+width: 32px;
+height: 32px;
+}
